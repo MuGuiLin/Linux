@@ -28,7 +28,7 @@
 
 
 
-### 给新安装的Ubuntu系统开启root账户登录权限
+## 给新安装的Ubuntu系统开启root账户登录权限
 
 1. 先用ubuntu账号用SSH方式登录，注：ubuntu账户是Ubuntu Server的默认账户，它的密码在购买服务器时可以自已设置 或 在云服务器创建成功后将这个初始密码发到站内信中。
 
@@ -72,13 +72,11 @@
 
 7. 至此给新安装的Ubuntu系统开启root账户登录权限就大功告成了，就可以使用root账户来登录SSH等服务啦。
 
+    
 
+## 自定义SSH远程连接服务端口号
 
-### 自定义服务器端口号
-
-> **这里以配置SSH远程连接服务的端口号为例！**
->
-> 由于新安装的Ubuntu系统默认SSH远程连接的端口号是22，这里大多数Linux系统默认的端口号，为了安全起见，修改这个端口号也是很有必要的
+> 由于新安装的Ubuntu系统默认SSH远程连接的端口号是22，这里大多数Linux系统默认的端口号，为了安全起见，修改这个端口号也是很有必要的。
 
 1. 用SSH登录后执行如下命令，添加自已定义端口号
 
@@ -93,7 +91,7 @@
     >
     > 所以，就另起一行 或 取消注释（去掉最前面的#号）配置自己要设置的端口号
     >
-    > 如 Port 888
+    > 如 Port 222
 
  3. 重启SSH远程连接服务
 
@@ -109,13 +107,64 @@
 
  3. 如果是云服务器还在要在控制台的安全组规则中，添加入站规则
 
-    > 如：0.0.0.0/0		TCP:888
+    > 如：0.0.0.0/0		TCP:222
 
 
 
 
 
+## 添加用户 和 用户组
 
+用户名toot 密码 root
 
+### 方法1
 
+1. 添加用户 **useradd** 
 
+    > 命令格式 useradd 用户名
+    >
+    > root@ubuntu:~# useradd RemoteUser01
+
+2. 添加用户组 **groupadd** 
+
+    > 命令格式 useradd 用户组名
+    >
+    > root@ubuntu:~# groupadd RemotUserGroup
+
+3. 加入组 **usermod**
+
+    > 命令格式 usermod -G 用户组名 用户名
+    >
+    > 如：将名为RemotUser01的用户 加入到 名为 RemotUserGroup的用户组中
+    >
+    > root@ubuntu:~# usermod -G RemotUserGroup RemotUser01
+
+4. 查看用户 **id**
+
+    > root@ubuntu:~# id RemoteUser01
+    >
+    > 注：如果id后面不加用户名，就默认显示当前登录的用户信息
+
+### 方法2
+
+1. 添加组 groupadd
+
+    > root@ubuntu:~# groupadd RemoteUserGroup
+
+2. 添加用户 并 加入组 useradd
+
+    > 命令格式 useradd -G 用户组名 用户名
+    >
+    > root@ubuntu:~# useradd -G RemoteUserGroup RemoteUser01
+
+3. 查看指定用户 id
+
+    > root@ubuntu:~# id RemoteUser01
+    >
+    > 注：如果id后面不加用户名，就默认显示当前登录的用户信息
+
+4. 册除用户 和 用户组
+
+    > userdel -r RemoteUser01
+    >
+    > groupdel RemoteUserGroup

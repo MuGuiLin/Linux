@@ -56,7 +56,7 @@
 
     root@ubuntu:~# **sudo vi /etc/ssh/sshd_config**
 
-    > 执行以上命令后将打开SSH配置文件sshd_config
+    > 执行以上命令后将打开SSH配置文件sshd_config，默认情况下，root账户是禁用状态！
     >
     > 1、找到PermitRootLogin without-password 配置项，把后面的without-password改为yes，并取消注释（去掉最前面的#号）。
     >

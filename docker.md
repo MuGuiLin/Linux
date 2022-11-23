@@ -1,33 +1,50 @@
- 
-1£¬»ñÈ¡Centos¾µÏñ
+# Docker å¸¸ç”¨å‘½ä»¤
+
+å®˜æ–¹æ–‡æ¡£ï¼š[Docker: Development](https://www.docker.com/)
+
+![Docker-build.png (900Ã—667)](https://www.docker.com/wp-content/uploads/2021/09/Docker-build.png)
+
+> åŠ å¿«æž„å»ºã€å…±äº«å’Œè¿è¡ŒçŽ°ä»£åº”ç”¨ç¨‹åºçš„æ–¹å¼ã€‚
+>
+> Docker ä½¿å¼€å‘é«˜æ•ˆä¸”å¯é¢„æµ‹ï¼š
+>
+> â€‹	Docker æ¶ˆé™¤äº†é‡å¤ã€å¹³å‡¡çš„é…ç½®ä»»åŠ¡ï¼Œå¹¶åœ¨æ•´ä¸ªå¼€å‘ç”Ÿå‘½å‘¨æœŸä¸­ç”¨äºŽå¿«é€Ÿã€ç®€å•å’Œå¯ç§»æ¤çš„åº”ç”¨ç¨‹åºå¼€å‘ - æ¡Œé¢å’Œäº‘ã€‚Docker å…¨é¢çš„ç«¯åˆ°ç«¯å¹³å°åŒ…æ‹¬ UIã€CLIã€API å’Œå®‰å…¨æ€§ï¼Œå®ƒä»¬æ—¨åœ¨åœ¨æ•´ä¸ªåº”ç”¨ç¨‹åºäº¤ä»˜ç”Ÿå‘½å‘¨æœŸä¸­ååŒå·¥ä½œã€‚
+
+
+
+### å¸¸ç”¨å‘½ä»¤
+
+1ï¼ŒèŽ·å–Centosé•œåƒ
+
  >docker pull centos:latest
- 
-2£¬²é¿´¾µÏñÔËÐÐÇé¿ö
+
+2ï¼ŒæŸ¥çœ‹é•œåƒè¿è¡Œæƒ…å†µ
+
  >docker images centos
- 
-3£¬ÔÚÈÝÆ÷ÏÂÔËÐÐ shell bash
+
+3ï¼Œåœ¨å®¹å™¨ä¸‹è¿è¡Œ shell bash
  >docker run -i -t centos /bin/bash
- 
-4£¬Í£Ö¹ÈÝÆ÷
+
+4ï¼Œåœæ­¢å®¹å™¨
  >docker stop <CONTAINER ID>
- 
-5£¬²é¿´ÈÝÆ÷ÈÕÖ¾
+
+5ï¼ŒæŸ¥çœ‹å®¹å™¨æ—¥å¿—
  >docker logs -f <CONTAINER ID>
- 
-6£¬É¾³ýËùÓÐÈÝÆ÷
+
+6ï¼Œåˆ é™¤æ‰€æœ‰å®¹å™¨
  >docker rm $(docker ps -a -q)
- 
-7£¬É¾³ý¾µÏñ
+
+7ï¼Œåˆ é™¤é•œåƒ
  >docker rmi <image id/name>
- 
-8£¬Ìá½»ÈÝÆ÷¸ü¸Äµ½¾µÏñ²Ö¿âÖÐ
+
+8ï¼Œæäº¤å®¹å™¨æ›´æ”¹åˆ°é•œåƒä»“åº“ä¸­
  >docker run -i -t centos /bin/bash
  >useradd myuser
  >exit
  >docker ps -a |more
  >docker commit <CONTAINER ID> myuser/centos
- 
-9£¬´´½¨²¢ÔËÐÐÈÝÆ÷ÖÐµÄ hello.sh
+
+9ï¼Œåˆ›å»ºå¹¶è¿è¡Œå®¹å™¨ä¸­çš„ hello.sh
  >docker run -i -t myuser/centos /bin/bash
  >touch /home/myuser/hello.sh
  >echo "echo \"Hello,World!\"" > /home/myuser/hello.sh
@@ -35,21 +52,21 @@
  >exit
  >docker commit <CONTAINER ID> myuser/centos
  >docker run -i -t myuser/centos /bin/sh /home/myuser/hello.sh
- 
-10£¬ÔÚÈÝÆ÷ÖÐÔËÐÐNginx
- 
-ÔÚÈÝÆ÷ÖÐ°²×°ºÃNginx£¬²¢Ìá½»µ½¾µÏñÖÐ
+
+10ï¼Œåœ¨å®¹å™¨ä¸­è¿è¡ŒNginx
+
+åœ¨å®¹å™¨ä¸­å®‰è£…å¥½Nginxï¼Œå¹¶æäº¤åˆ°é•œåƒä¸­
  >docker run -t -i -p 80:80 nginx/centos /bin/bash
- Æô¶¯Nginx
+ å¯åŠ¨Nginx
  >/data/apps/nginx/sbin/nginx
- (»¹²»Çå³þÈçºÎÔÚºóÌ¨ÔËÐÐ!!!)
- 
-ÔÚä¯ÀÀÆ÷·ÃÎÊËÞÖ÷»ú80¶Ë¿Ú¡£
- 
-11£¬Ó³ÉäÈÝÆ÷¶Ë¿Ú
+ (è¿˜ä¸æ¸…æ¥šå¦‚ä½•åœ¨åŽå°è¿è¡Œ!!!)
+
+åœ¨æµè§ˆå™¨è®¿é—®å®¿ä¸»æœº80ç«¯å£ã€‚
+
+11ï¼Œæ˜ å°„å®¹å™¨ç«¯å£
  >docker run -d -p 192.168.9.11:2201:22 nginx/centos /usr/sbin/sshd -D
- 
-ÓÃssh root@192.168.9.11 -p 2201 Á¬½ÓÈÝÆ÷£¬
+
+ç”¨ssh root@192.168.9.11 -p 2201 è¿žæŽ¥å®¹å™¨ï¼Œ
 
 docker run -i -d -t -P -p 8080:80 -p 49180:22 centos:base /bin/bash
 

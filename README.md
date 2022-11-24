@@ -59,6 +59,14 @@
 > - **-A, --show-all**：等价于 -vET。
 > - **-e：**等价于"-vE"选项；
 > - **-t：**等价于"-vT"选项；
+>
+> 演示实例：
+>
+> ```bash
+> cat /var/log/nginx/access.log* > /root/access.log #将Nginx的系统日志提取到/root目录中
+> ```
+>
+> 
 
 
 
@@ -89,6 +97,7 @@
 > grep hello test.txt #在test.txt文件中查找 hello 字符
 > grep -c hello test.txt #统计在test.txt文件中查找到 hello 字符内容的行数
 > grep mupiao user.txt > /root/myName.log	# 将在test.txt文件中查找到的 mupiao 字符内容 提取到/root/myName.log文件中
+> 
 > ```
 >
 > 

@@ -62,9 +62,54 @@
 
 
 
-~# **greap**
+~# **grep**
 
 > grep 用于查找文件里符合条件的字符串，它经常与管道符`|`、`cat`、`ps`命令一起使用；主要用于查找文件中符合条件的字符串、统计文件中符合条件的字符串行数等，注：grep不显示自身进程！！
+>
+> 语法格式：grep [参数] [要查找的字符] fileName(文件名)
+>
+> 参数说明：
+>
+> - -o  只显示匹配的内容  --only-matching
+> - -i  忽略大小写，都匹配显示出来 --ignore-case
+> - -n  给匹配的内容加行号  --line-number
+> - -v  反转查找，输出与模式不相符的内容  --invert-match
+> - -r  递归搜索所有文件
+> - -A + 长度 ： after 显示出匹配内容以及它的后面几行
+>
+> - -B + 长度 ：before 显示匹配内容以及他的前几行
+>
+> - -C + 长度 ：centre显示匹配内容并且显示他的前后几行内容
+>
+> - -E ：支持更多的元字符，支持扩展正则
+>
+> 演示实例：
+>
+> ```shell
+> grep hello test.txt #在test.txt文件中查找 hello 字符
+> grep -c hello test.txt #统计在test.txt文件中查找到 hello 字符内容的行数
+> grep mupiao user.txt > /root/myName.log	# 将在test.txt文件中查找到的 mupiao 字符内容 提取到/root/myName.log文件中
+> ```
+>
+> 
+>
+> **与其他命令一起使用：**
+>
+> ​	**grep、cat、管道符配合使用**
+>
+> ```bash
+> cat test.txt |grep hello	#过滤test.txt文件中hello内容
+> ```
+>
+> ​	**grep、ps、管道符配合使用**
+>
+> ```bash
+> ps -ef|grep ssh	#过滤ssh进程信息
+> ```
+>
+> 
+
+
 
 ~# **df**
 

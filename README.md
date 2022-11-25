@@ -439,6 +439,16 @@
     >
     > 注：如果id后面不加用户名，就默认显示当前登录的用户信息
 
+5. 设置密码 **echo** 
+
+    > root@ubuntu:~# echo RemoteUser01:root | 123456
+
+6. 测试SSH登录 
+
+    > root@ubuntu:~# ssh -p 22 RemoteUser01@127.0.0.1
+    >
+    > password：123456
+
 ### 方法2
 
 1. 添加组 groupadd

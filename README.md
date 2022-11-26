@@ -155,7 +155,7 @@
 >
 > 参数说明：
 >
-> 
+> ![chmod.png (446×357)](https://raw.githubusercontent.com/MuGuiLin/Linux/master/chmod.png)
 >
 > 演示实例：
 >

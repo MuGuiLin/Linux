@@ -42,6 +42,84 @@
 
 
 
+~# **cat**
+
+> cat（英文全拼：concatenate）命令用于连接文件并打印到标准输出设备上。
+>
+> 语法格式：cat [参数] fileName(文件名)
+>
+> 参数说明：
+>
+> - **-n 或 --number**：由 1 开始对所有输出的行数编号。
+> - **-b 或 --number-nonblank**：和 -n 相似，只不过对于空白行不编号。
+> - **-s 或 --squeeze-blank**：当遇到有连续两行以上的空白行，就代换为一行的空白行。
+> - **-v 或 --show-nonprinting**：使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外。
+> - **-E 或 --show-ends** : 在每行结束处显示 $。
+> - **-T 或 --show-tabs**: 将 TAB 字符显示为 ^I。
+> - **-A, --show-all**：等价于 -vET。
+> - **-e：**等价于"-vE"选项；
+> - **-t：**等价于"-vT"选项；
+>
+> 演示实例：
+>
+> ```bash
+> cat /var/log/nginx/access.log* > /root/access.log #将Nginx的系统日志提取到/root目录中
+> ```
+>
+> 
+
+
+
+~# **grep**
+
+> grep 用于查找文件里符合条件的字符串，它经常与管道符`|`、`cat`、`ps`命令一起使用；主要用于查找文件中符合条件的字符串、统计文件中符合条件的字符串行数等，注：grep不显示自身进程！！
+>
+> 语法格式：grep [参数] [要查找的字符] fileName(文件名)
+>
+> 参数说明：
+>
+> - -o  只显示匹配的内容  --only-matching
+> - -i  忽略大小写，都匹配显示出来 --ignore-case
+> - -n  给匹配的内容加行号  --line-number
+> - -v  反转查找，输出与模式不相符的内容  --invert-match
+> - -r  递归搜索所有文件
+> - -A + 长度 ： after 显示出匹配内容以及它的后面几行
+>
+> - -B + 长度 ：before 显示匹配内容以及他的前几行
+>
+> - -C + 长度 ：centre显示匹配内容并且显示他的前后几行内容
+>
+> - -E ：支持更多的元字符，支持扩展正则
+>
+> 演示实例：
+>
+> ```shell
+> grep hello test.txt #在test.txt文件中查找 hello 字符
+> grep -c hello test.txt #统计在test.txt文件中查找到 hello 字符内容的行数
+> grep mupiao user.txt > /root/myName.log	# 将在test.txt文件中查找到的 mupiao 字符内容 提取到/root/myName.log文件中
+> 
+> ```
+>
+> 
+>
+> **与其他命令一起使用：**
+>
+> ​	**grep、cat、管道符配合使用**
+>
+> ```bash
+> cat test.txt |grep hello	#过滤test.txt文件中hello内容
+> ```
+>
+> ​	**grep、ps、管道符配合使用**
+>
+> ```bash
+> ps -ef|grep ssh	#过滤ssh进程信息
+> ```
+>
+> 
+
+
+
 ~# **df**
 
 >功能描述：用于显示 Linux 系统上的文件系统磁盘使用情况统计。
@@ -196,6 +274,48 @@
 
 
 
+~# **gzip**
+
+> gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多出".gz"的扩展名。
+>
+> 语法格式：
+>
+> gzip [-acdfhlLnNqrtvV][-S <压缩字尾字符串>][-&lt;压缩效率&gt;][--best/fast][文件...] 或 gzip [-acdfhlLnNqrtvV][-S <压缩字尾字符串>][-&lt;压缩效率&gt;][--best/fast][目录]
+>
+> 参数说明：
+>
+> - -a或--ascii 　使用ASCII文字模式。
+> - -c或--stdout或--to-stdout 　把压缩后的文件输出到标准输出设备，不去更动原始文件。
+> - -d或--decompress或----uncompress 　解开压缩文件。
+> - -f或--force 　强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接。
+> - -h或--help 　在线帮助。
+> - -l或--list 　列出压缩文件的相关信息。
+> - -L或--license 　显示版本与版权信息。
+> - -n或--no-name 　压缩文件时，不保存原来的文件名称及时间戳记。
+> - -N或--name 　压缩文件时，保存原来的文件名称及时间戳记。
+> - -q或--quiet 　不显示警告信息。
+> - -r或--recursive 　递归处理，将指定目录下的所有文件及子目录一并处理。
+> - -S<压缩字尾字符串>或----suffix<压缩字尾字符串> 　更改压缩字尾字符串。
+> - -t或--test 　测试压缩文件是否正确无误。
+> - -v或--verbose 　显示指令执行过程。
+> - -V或--version 　显示版本信息。
+> - -<压缩效率> 　压缩效率是一个介于1－9的数值，预设值为"6"，指定愈大的数值，压缩效率就会愈高。
+> - --best 　此参数的效果和指定"-9"参数相同。
+> - --fast 　此参数的效果和指定"-1"参数相同。
+>
+> 演示实例：
+>
+> ```bash
+> gzip test.txt # 压缩名为text.txt文件，压缩后为test.txt.gz
+> gzip *  #压缩当前所在目录下的所有文件
+> 
+> gzip -d test.tst.gz #解开名为text.txt.gz的压缩文件
+> ```
+>
+> 
+
+
+
 ## 给新安装的Ubuntu系统开启root账户登录权限
 
 1. 先用ubuntu账号用SSH方式登录，注：ubuntu账户是Ubuntu Server的默认账户，它的密码在购买服务器时可以自已设置 或 在云服务器创建成功后将这个初始密码发到站内信中。
@@ -324,6 +444,16 @@
     > root@ubuntu:~# id RemoteUser01
     >
     > 注：如果id后面不加用户名，就默认显示当前登录的用户信息
+
+5. 设置密码 **echo** 
+
+    > root@ubuntu:~# echo RemoteUser01:root | 123456
+
+6. 测试SSH登录 
+
+    > root@ubuntu:~# ssh -p 22 RemoteUser01@127.0.0.1
+    >
+    > password：123456
 
 ### 方法2
 

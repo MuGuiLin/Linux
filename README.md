@@ -1,5 +1,7 @@
 # Linux系统常用命令
 
+[Linux开发命令365](https://dablelv.blog.csdn.net/article/details/104488673)
+
 ## ~# **cd **
 
 > 功能描述：在命令窗口中打开指目录

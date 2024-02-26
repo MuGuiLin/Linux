@@ -1,6 +1,6 @@
 # Linux系统常用命令
 
-[Linux开发命令365](https://dablelv.blog.csdn.net/article/details/104488673)
+## [Linux开发命令365](https://dablelv.blog.csdn.net/article/details/104488673)
 
 ## ~# **cd **
 
@@ -283,6 +283,8 @@
 7. 至此给新安装的Ubuntu系统开启root账户登录权限就大功告成了，就可以使用root账户来登录SSH等服务啦。
 
     
+   
+   
 
 ## SSH远程安全访问配置
 
@@ -367,6 +369,8 @@
     >
     > 注：如果id后面不加用户名，就默认显示当前登录的用户信息
 
+
+
 ### 方法2
 
 1. 添加组 groupadd
@@ -390,6 +394,8 @@
     > userdel -r RemoteUser01
     >
     > groupdel RemoteUserGroup
+
+
 
 
 
@@ -447,6 +453,8 @@
 >
 > 很容易误按的一个命令：qq：左下角会出现“recording@”这个标识。这是vim的一个强大的功能。它可以录制一个宏，按q可停止宏录制。
 
+
+
 ##### 2、插入(编辑)模式 InsertScrLK 或 i 键
 
 > 在命令模式中按下【i，I，o，O，a，A，r，R】等字母之后进入编辑模式。按下上述的字母时，画面的左下方可能会出现【--INSERT--或--插入--】的字样，可以做文字数据输入。各个按键含义如下：
@@ -464,6 +472,8 @@
 > O：在光标所在列上方新增一列并进入输入模式
 >
 > ESC：返回命令模式
+
+
 
 ##### 3、底行(末行)模式 Shift + :
 

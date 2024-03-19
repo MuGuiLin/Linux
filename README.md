@@ -1,6 +1,14 @@
 # Linux系统常用命令
 
-## [Linux开发命令365](https://dablelv.blog.csdn.net/article/details/104488673)
+
+
+[Linux 常用开发命令365](https://dablelv.blog.csdn.net/article/details/104488673)
+
+
+
+[Windows 自带Shell  - PSWindows](https://aka.ms/PSWindows)
+
+
 
 ## ~# **cd **
 

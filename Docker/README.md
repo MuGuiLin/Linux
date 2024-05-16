@@ -1,6 +1,16 @@
 # Docker 常用命令
 
-官方文档：[Docker: Development](https://www.docker.com/)
+> Docker 是一个开源的应用容器引擎，基于 [Go 语言](https://www.runoob.com/go/go-tutorial.html) 开发，并遵从 Apache2.0 协议开源。
+>
+> Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+>
+> Docker 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。
+
+## 相关链接
+
+Docker 官网：[https://www.docker.com](https://www.docker.com/)
+
+Github Docker 源码：https://github.com/docker/docker-ce
 
 ![Docker-build.png (900×667)](https://www.docker.com/wp-content/uploads/2021/09/Docker-build.png)
 
@@ -12,7 +22,18 @@
 
 
 
+## Docker的应用场景
+
+- Web 应用的自动化打包和发布。
+- 自动化测试和持续集成、发布。
+- 在服务型环境中部署和调整数据库或其他的后台应用。
+- 从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。
+
+
+
 关于虚拟机：
+
+如VM等，由于每个虚拟机都是一个完整的操作系统，要分配和占用掉原有系统资源，所以当虚拟机多到一定程度时，操作系统本身资源也就会消耗殆尽（当然也可以进行扩容）的。
 
 
 

@@ -72,6 +72,37 @@ Github Docker 源码：https://github.com/docker/docker-ce
 
 
 
+## Docker相关
+
+![Docker引擎](D:\Linux\Docker\Docker引擎.png)
+
+### Docker Daemon进程
+
+在安装使用Docker，得先运行Docker Daemon进程，用于管理Docker
+
+- 镜像 images 
+- 容器 containers
+- 网络 network
+- 存储 Data Volumes(数据卷)
+
+
+
+### Rest接口
+
+用于提供 和 Daemon进程 交互的API接口
+
+
+
+### Docker Client客户端
+
+使用客户端 通过REST API接口 和 Docker Daemon进程 进行访问、操作。
+
+
+
+### Docker平台组成
+
+![Docker平台组成](D:\Linux\Docker\Docker平台组成.png)
+
 1，获取Centos镜像
 
  >docker pull centos:latest

@@ -103,6 +103,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+
 # 查看所有数据库
 mysql> show databases;
 +--------------------+
@@ -114,6 +115,25 @@ mysql> show databases;
 | sys                |
 +--------------------+
 4 rows in set (0.00 sec)
+
+
+# 创建一个新数据库
+mysql> create database mupiao;
+Query OK, 1 row affected (0.01 sec)
+
+
+# 查看所有数据库
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mupiao             |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
 ```
 
 

@@ -134,6 +134,33 @@ image 文件是通用的，一台机器的 image 文件拷贝到另一台机器�
 
 
 
+## 修改Windows系统下Docker 的镜像存储位置
+
+1、先关闭(退出服务) Docker
+
+2、然后执行下面的操作
+
+```shell
+# WSL2方式切换docker目录
+
+# 查看docker状态
+wsl -l -v --all
+
+# 导出WSL子系统镜像（注：导出的路径要自己提前先创建好！）
+wsl --export docker-desktop "D:\Docker\wsl\distro\docker-desktop.tar"
+wsl --export docker-desktop-data "D:\Docker\wsl\data\docker-desktop-data.tar"
+
+# 注销现有的wsl
+wsl --unregister docker-desktop
+wsl --unregister docker-desktop-data
+
+# 重新创建wsl系统
+wsl --import docker-desktop "D:\Docker\wsl\distro" "D:\Docker\wsl\distro\docker-desktop.tar" --version 2
+wsl --import docker-desktop-data "D:\Docker\wsl\data" "D:\Docker\wsl\data\docker-desktop-data.tar" --version 2
+```
+
+
+
 # Docker常用命令
 
 ### [Docker: 加速容器应用程序开发(Accelerated Container Application Development) ](https://www.docker.com/)

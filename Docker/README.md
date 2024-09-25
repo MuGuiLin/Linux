@@ -1,4 +1,6 @@
-# Docker 常用命令
+# Docker 容器化技术
+
+![Docker-build.png (900×667)](https://www.docker.com/wp-content/uploads/2021/09/Docker-build.png)
 
 > 软件开发最大的麻烦事之一，就是环境配置。用户计算机的环境都不相同，你怎么知道自家的软件，能在那些机器跑起来？
 >
@@ -69,8 +71,6 @@ Docker 的主要用途，目前有三大类。
 Docker 官网：[https://www.docker.com](https://www.docker.com/)
 
 Github Docker 源码：https://github.com/docker/docker-ce
-
-![Docker-build.png (900×667)](https://www.docker.com/wp-content/uploads/2021/09/Docker-build.png)
 
 > Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
 >

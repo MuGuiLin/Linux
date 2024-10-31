@@ -14,14 +14,28 @@
 
   ```bash
   ls /usr/bin/python*
+  
+  # 或者：
+  sudo update-alternatives --list python
+  # 注：如果报update-alternatives: error: no alternatives for python 错时，执行如下命令，将python添加到update-alternatives列表中 （注：最后1、2、3是序号，在进行版本选择切换时会用到）
+  
+  # 根据自己的需要添加，这里为的演示特地用的3个版本
+  sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+  
+  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+  
+  sudo update-alternatives --install /usr/bin/python python /www/server/pyporject_evn/meeting_venv/bin/python3.11 3
   ```
 
 - 切换到指的python的版本（如：切换到python3）
 
   ```bash
   alias python=python3.6
+  
+  # 或者（执行如下命令后，会显示出来的python版本列表，输入后面的序号就切换到对应的python版本了！ ）
+  sudo update-alternatives --config python
   ```
-
+  
   
 
 

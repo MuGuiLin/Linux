@@ -8,6 +8,24 @@
 
 
 
+### 在Ubuntu系统下切换当前python的版本
+
+- 查看所有python版本
+
+  ```bash
+  ls /usr/bin/python*
+  ```
+
+- 切换到指的python的版本（如：切换到python3）
+
+  ```bash
+  alias python=python3.6
+  ```
+
+  
+
+
+
 ## ~# **cd **
 
 > 功能描述：在命令窗口中打开指目录

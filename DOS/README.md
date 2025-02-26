@@ -6,7 +6,7 @@
 
 > 从1981年MS-DOS1.0直到1995年MS-DOS 6.22的15年间，DOS作为微软公司在个人计算机上使用的一个操作系统载体，推出了多个版本。DOS在IBM PC 兼容机市场中占有举足轻重的地位。可以直接操纵管理硬盘的文件，以DOS的形式运行。
 
-
+![](https://bkimg.cdn.bcebos.com/pic/a8014c086e061d9595b883b97bf40ad163d9cab1?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080)
 
 > ```	bash
 >DOS是1979年由微软公司为IBM个人电脑开发的MS-DOS,它是一个单用户单任务操作系统。后来DOS的概念也包括了其它公司生产的与MS-DOS兼容的系统，如PC-DOS、DR-DOS, 以及一些其它相对不太出名的DOS兼容产品。

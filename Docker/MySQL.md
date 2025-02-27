@@ -64,7 +64,21 @@ docker image ls
 **3、启动MySQL：**
 
 ```shell
-docker run -p 3306:3306 --name myslq -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest --character-set-connection=utf8 --character-set-client=utf8
+docker run -p 3306:3306 
+--name myslq 
+-e MYSQL_ROOT_PASSWORD=123456 
+-d mysql:latest 
+--character-set-connection=utf8 
+--character-set-client=utf8 
+-v D:/Docker/mysql/conf:/etc/mysql/
+
+# 参数说明：
+# -p 3308:3306 表示将容器中的3306端口 挂载到 宿主机的3308端口
+# --name mysql 表示指定容器的名称
+# --restart=always 表示设置当Deckor启动时也随着启动该程序
+# --privileged=true 表示设置获取宿主机的最大root权限
+# -v /容器目录:/宿主机目录 表示将容器中指定的目录 与 宿主机中指定的目录做映射绑定（这样做的好处在于，比如：在需要修改mysql的配置时，就只需要在宿主机指定的目录中修改，不用去容器目录中了）
+# -v D:/Docker/mysql/conf:/etc/mysql/ 
 
 # 在执行命令后显示ID号表示启动成功！
 016dd2735ac451ffefba78ffa1d593395ccdbc5211078b511f4bb622f034aa39

@@ -44,7 +44,7 @@ datajoint/mysql        MySQL image pre-configured to work smoothly …   2
 ```shell
 docker pull mysql
 
-# 或指定版本
+# 或指定版本（不指定则拉取最新版本）
 docker pull mysql:8.0
 ```
 
@@ -64,13 +64,7 @@ docker image ls
 **3、启动MySQL：**
 
 ```shell
-docker run -p 3306:3306 
---name myslq 
--e MYSQL_ROOT_PASSWORD=123456 
--d mysql:latest 
---character-set-connection=utf8 
---character-set-client=utf8 
--v D:/Docker/mysql/conf:/etc/mysql/
+docker run -p 3306:3306 --name myslq8 --privileged=true -e MYSQL_ROOT_PASSWORD=123456 -d mysql:latest --character-set-connection=utf8 --character-set-client=utf8 -v D:/Docker/mysql/log:/var/log/mysql -v D:/Docker/mysql/data:/var/lib/mysql -v D:/Docker/mysql/conf:/etc/mysql
 
 # 参数说明：
 # -p 3308:3306 表示将容器中的3306端口 挂载到 宿主机的3308端口

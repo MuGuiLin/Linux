@@ -84,15 +84,14 @@ docker ps -a
 # 也可以通过命令来查看正在运行中的容器
 docker ps
 
-CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS
-      NAMES
+CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS                        NAMES
 016dd2735ac4   mysql:latest   "docker-entrypoint.s…"   29 minutes ago   Up 29 minutes   33060/tcp, 0.0.0.0:62790->3306/tcp myslq
 ```
 
 **3、进入MySQL容器实例：**
 
 ```shell
-# 根据docker ps 查看到mysql的NAMES打开MySQL容器实例
+# 根据docker ps 查看到mysql的CONTAINER ID打开MySQL容器实例
 docker exec -it 016dd2735ac4 bash
 
 # 在容器实例登录MySQL

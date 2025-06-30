@@ -16,7 +16,7 @@
 
 
 
-### Windows系统中 查看/关闭 端口
+### Windows系统中 查看IP信息
 
 在DOS命令窗口中输入如下命令：
 
@@ -38,6 +38,15 @@ ping baidu.com
 ping www.muguilin.com -t # -t参数 会一直拼（不加-t 只拼4次就结束！）
 正在 Ping muguilin.com [118.195.218.176] 具有 32 字节的数据:
 
+```
+
+
+
+### Windows系统中 查看/关闭 端口
+
+在DOS命令窗口中输入如下命令：
+
+```shell
 # 查看netstat相关参数
 netstat h
 

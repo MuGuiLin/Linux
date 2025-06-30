@@ -32,8 +32,8 @@ ping 114.114.114.114
 
 # 拼域名：在命令行中使用 ping 命令时，应使用主机名或 IP 地址，而不是 URL。
 # 例如，应使用 ping www.baidu.com 而不是 ping http://www.baidu.com。URL 中的协议部分（如 http://）不会被 ping 命令识别和处理‌
-
 ping baidu.com
+
 # 好处：使用ping命令，还可以查看某个域名绑定的IP！
 ping www.muguilin.com -t # -t参数 会一直拼（不加-t 只拼4次就结束！）
 正在 Ping muguilin.com [118.195.218.176] 具有 32 字节的数据:

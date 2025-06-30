@@ -54,7 +54,6 @@ netstat h
 netstat -a # 显示所有连接和侦听端口
 netstat -r # 显示路由表。
 
-
 # 关闭指定端口
 netstat -ano # 显示所有已启动端口 和 进程ID
 

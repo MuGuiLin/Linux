@@ -2,7 +2,7 @@
 
 ### 官网：[https://www.bt.cn - 安全高效的服务器运维面板](https://www.bt.cn)
 
-![bt-logo](D:\Linux\BT宝塔面板\bt-logo.svg)
+![bt-logo](D:\GitHub\Linux\BT宝塔面板\bt-logo.svg)
 
 ## 宝塔面板 相关命令详解
 

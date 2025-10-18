@@ -626,22 +626,23 @@
 * SSH 常见的UI操作工具有 Xshell 等。
 
 
-# 在Linux查看端口号占用命令：netstat（在SSH[远程管理]中查看服务器端口占用情况）
 
-1、查看服务器某个端口是否被占用
-    netstat -pan | grep 80  //可查看根80相关端口的占用情况
-    或
-    netstat -anp | grep 80  //可查看根80相关端口的占用情况
-    或
-    netstat -anlp | grep 81
+### 在Linux查看端口号占用命令：netstat（在SSH[远程管理]中查看服务器端口占用情况）
 
-2、查看服务器所有被占用的端口
-    netstat -nultp
+查看ip端口是否可能接通： curl http://118.195.218.176:666
 
-3、查看端口在什么地方被占用的
-    ps -ef | grep 81
+#### 1、查看服务器某个端口是否被占用
+​    netstat -pan | grep 80  //可查看根80相关端口的占用情况
+​    或
+​    netstat -anlp | grep 81
 
-## netstat中的参数选项说明
+#### 2、查看服务器所有被占用的端口
+​    netstat -nultp
+
+#### 3、查看端口在什么地方被占用的
+​    ps -ef | grep 81
+
+#### netstat中的参数选项说明
 
 * -a或--all：显示所有连线中的Socket； 
 * -A<网络类型>或--<网络类型>：列出该网络类型连线中的相关地址； 

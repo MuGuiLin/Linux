@@ -88,7 +88,9 @@ cat /www/server/panel/data/port.pl
 
 
 
-## 忘记Linux 3.X/4.x/5.x/6.x/7.x 宝塔面板密码的解决方案
+## 宝塔面板的密码忘记了怎么办？
+
+#### 解决方法
 
 - 进入ssh，**推荐先安装 [堡塔SSH客户端](https://www.bt.cn/download/term.html) (免费/简单/中文/多屏)** 
 
@@ -105,11 +107,26 @@ cat /www/server/panel/data/port.pl
 
 
 
+## 宝塔面板在开启/关闭防火墙/设置端口时报错了！
+
+#### 可能原因
+
+**提示：xxx规则失败:/bin/sh: ufw: command not found**
+
+在使用宝塔（BT Panel）面板管理服务器时，如果你遇到“/bin/sh: ufw: command not found”的错误，这通常意味着`ufw`（Uncomplicated Firewall，一个在Ubuntu及其衍生版本中常用的防火墙工具）没有安装在你的服务器上。
+
+#### 解决方法
+
+在服务器上安装好`ufw`就OK了
+
+```shell
+sudo apt update
+sudo apt install ufw
+```
 
 
 
-
-## 宝塔面板链接被重置怎么恢复
+## 宝塔面板链接被重置怎么恢复？
 
 ###### 时间 : 2024-01-30 19:27:02
 

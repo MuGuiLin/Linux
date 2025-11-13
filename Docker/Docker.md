@@ -74,12 +74,28 @@ Docker 官网：[https://www.docker.com](https://www.docker.com/)
 
 Github Docker 源码：https://github.com/docker/docker-ce
 
+# Linux 和 Bash 入门https://aka.ms/wslgettingstarted
+
 > Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
 >
 > Docker 容器是完全使用沙箱机制，可加快构建、共享和运行现代应用程序的方式，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。
 >
 > Docker 使开发高效且可预测，Docker 消除了重复、平凡的配置任务，并在整个开发生命周期中用于快速、简单和可移植的应用程序开发 - 桌面和云。Docker 全面的端到端平台包括 UI、CLI、API 和安全性，它们旨在在整个应用程序交付生命周期中协同工作。
 >
+
+
+
+## 安装 Docker Desktop
+
+为节省C盘空间我们使用命令来安装DockerDesktop使其可以自定义安装路径
+
+记录下Docker Desktop的自定义安装路径，我安装的路径为：D:\Program Files\DockerDesktop
+
+首先通过cmd进入"Docker Desktop Installer.exe"所在的目录，然后输入：
+
+``` shell
+"Docker Desktop Installer.exe" install --installation-dir="D:\Program Files\DockerDesktop"
+```
 
 
 

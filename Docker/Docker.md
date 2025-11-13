@@ -1,6 +1,6 @@
 # Docker 容器化技术
 
-![Docker-build.png (900×667)](https://www.docker.com/wp-content/uploads/2021/09/Docker-build.png)
+![Docker](D:\GitHub\Linux\Docker\Docker.png)
 
 ## 前言
 
@@ -66,7 +66,7 @@ Docker 的主要用途，目前有三大类。
 
 **为么什叫容器：**由于隔离的进程独立于宿主机(真实的硬件服务器、个人电脑) 和 其他隔离的进程，Docker被定义为开源的容器引擎，可以方便的对容器进行（创建、删除、切换）等管理，例如：对**镜像**打包封装，引入Docker Registry对镜像统一管理，特性在程序开发人员，Dockder可以实现的在开发环境、测试环境、生产环境的部署一致性，从面极大的减少运维成本。
 
-![容器技术](D:\Linux\Docker\容器技术.png)
+![容器技术](D:\GitHub\Linux\Docker\容器技术.png)
 
 ## 相关链接
 
@@ -206,7 +206,7 @@ wsl --import docker-desktop-data "D:\Docker\wsl\data" "D:\Docker\wsl\data\docker
 
 ## Docker相关
 
-![Docker引擎](D:\Linux\Docker\Docker引擎.png)
+![Docker引擎](D:\GitHub\Linux\Docker\Docker引擎.png)
 
 ### Docker Daemon进程
 
@@ -233,7 +233,7 @@ wsl --import docker-desktop-data "D:\Docker\wsl\data" "D:\Docker\wsl\data\docker
 
 ### Docker平台组成
 
-![Docker平台组成](D:\Linux\Docker\Docker平台组成.png)
+![Docker平台组成](D:\GitHub\Linux\Docker\Docker平台组成.png)
 
 1，获取Centos镜像
 

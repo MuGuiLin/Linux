@@ -61,3 +61,17 @@ taskkill -PID 8668 -F # 指定杀掉端口对应的 进程ID   /F 表示强制�
 
 ```
 
+
+
+### 统计已安装的软件
+
+在DOS命令窗口中输入如下命令：
+
+```shell
+# 将已安装的软件信息输出到，D盘下的123.txt文件中
+Get-wmiobject -Query "select * From win32_Product" | Format-Table Name -Autosize >> D:\123.txt
+
+# 将已安装的软件信息输出到，D盘下的456.txt文件中
+Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\windows\Currentversion\uninstall\* | Select-Object DisplayName | Format-Table -Autosize >> D:\345.txt
+```
+

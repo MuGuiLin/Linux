@@ -14,6 +14,111 @@
 
 
 
+### Docker 网络代理配置
+
+1、通过`vim /etc/docker/daemon.json`命令，打开**daemon.json**文件（在Linux系统中daemon.json文件一般默认都在/etc/docker/这个目录中），网络代理配置如下：
+
+```json
+{
+	"registry-mirrors": [
+		"https://mirrors.aliyun.com",
+		"https://docker.mirrors.ustc.edu.cn",
+		"https://hub-mirror.c.163.com",
+		"https://mirror.ccs.tencentyun.com"
+	]
+}
+```
+
+**【注，每次修改配置文件后，一定要记得执行如下两步操作才会生效！！】**
+
+2、执行重新加载配置命令 `systemctl daemon-reload`
+
+3、执行重新启动Docker命令 `systemctl restart docker`
+
+
+
+### vi 或 vim 常用命令
+
+`i` 进入内容编辑模式
+
+`Shift + :` 退出内容编辑模式
+
+`wq` 保存退出
+
+| 动作           | 按键/命令       | 说明                                                         |
+| -------------- | --------------- | ------------------------------------------------------------ |
+| 进入编辑       | `i`             | 在光标前插入（Insert） *(也可用 `a` 在光标后，`o` 在下方新开一行)* |
+| 退出编辑       | `Esc` `Shift+:` | 关键步骤！ 必须先按此键回到“正常模式”，才能执行保存或退出命令。 *(你提到的 `Shift + :` 其实是在按完 Esc 后，输入 `:` 进入命令行模式)* |
+| 保存并退出     | `:wq`           | Write (保存) + Quit (退出)  *(输入完冒号后敲回车生效)*       |
+| 不保存强制退出 | `:q!`           | 如果改乱了想放弃修改，用这个强制退出                         |
+| 只保存不退出   | `:w`            | 保存当前进度，继续编辑                                       |
+| 紧急撤退       | `:qa! `         | 是一个非常果断的“**紧急撤退**”命令！                         |
+
+
+
+### Docker-http
+
+```shell
+# 标准的构建docker镜像命令格式如下：
+# docker build -t <镜像名>:<标签> <构建上下文路径>
+
+docker build -t 12306-mcp:latest .  # 创建Docker镜像
+
+# 运行docker容器，映射端口（假设容器内暴露了 8080 端口）命令
+docker run -p 8080:8080 -d 12306-mcp npx 12306-mcp --port 8080 #  运行Docker容器
+
+# 查看docker所有已启动的容器 
+docker ps -a
+```
+
+
+
+### **🔍 执行前检查清单**
+
+在运行命令前，请确保当前目录下满足以下条件，否则会报错：
+
+1. **存在 Dockerfile**：
+   当前目录下必须有一个名为 `Dockerfile` 的文件（注意大小写，Linux 下严格区分）。
+
+   ```
+   ls -l Dockerfile
+   ```
+
+   *如果没有，你需要先创建 `Dockerfile` 文件。*
+
+   ```shell
+   FROM node:lts-alpine
+   WORKDIR /mcp
+   RUN npm install 12306-mcp
+   ```
+
+   
+
+2. **权限问题**：
+   如果你遇到 `permission denied` 或 `cannot connect to the Docker daemon`，可能需要加 `sudo`：
+
+   ```
+   sudo docker build -t 12306-mcp .
+   ```
+
+3. **构建上下文**：
+   确保你在包含 `Dockerfile` 的目录下执行命令。如果不确定，可以用绝对路径：
+
+   ```
+   docker build -t 12306-mcp /path/to/your/project
+   ```
+
+### **🚀 构建成功后**
+
+构建完成后，你可以运行该镜像：
+
+```
+# 运行容器，映射端口（假设容器内暴露了 8080 端口）
+docker run -d -p 8080:8080 --name my-12306 12306-mcp
+```
+
+
+
 ## 由来
 
 **1、关于虚拟机：**

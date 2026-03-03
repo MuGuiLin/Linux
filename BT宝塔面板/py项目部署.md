@@ -12,7 +12,7 @@
 
 内网 curl 127.0.0.1:3000 是OK！
 
-外网 curl 124.223.154.95:3000 报 curl: (7) Failed to connect to 124.223.154.95 port 3000 after 0 ms: Couldn't connect to server.
+外网 curl 126.223.158.95:3000 报 curl: (7) Failed to connect to 126.223.158.95 port 3000 after 0 ms: Couldn't connect to server.
 
 
 
@@ -63,13 +63,58 @@
    # 或者
    ss -tlnp | grep 3000
    
-   # 显示如下就表示即便不是127.0.0.1的外网也可以访问了（暴露0.0.0.0:3000意味着互联网上的任何人的IP都能尝试连接你的3000端口）：
+   # 显示如下 就表示即便不是127.0.0.1的外网也可以访问了（暴露0.0.0.0:3000意味着互联网上的任何人的IP都能尝试连接你的3000端口）：
    tcp        0      0 0.0.0.0:3000        0.0.0.0:*        LISTEN    2339400/python3 
    ```
 
    **成功标志**：看到 `0.0.0.0:3000` 或 `:::3000`，而不是 `127.0.0.1:3000`。
 
-2. **外网测试**：
+2. **检查所有监听地址**：
+
+   ```shell
+   netstat -tlnp
+   # 或者
+   ss -tlnp
+   
+   # 显示如下
+   
+   (3.12.12) [root@VM-0-7-opencloudos ~]# netstat -tlnp
+   Active Internet connections (only servers)
+   Proto Recv-Q Send-Q Local Address   Foreign Address  State    PID/Program name    
+   tcp   0      0      0.0.0.0:5566    0.0.0.0:*        LISTEN   25973/sshd: /usr/sb 
+   tcp   0      0      0.0.0.0:3309    0.0.0.0:*        LISTEN   76446/mysqld        
+   tcp   0      0      0.0.0.0:8080    0.0.0.0:*        LISTEN   962266/docker-proxy 
+   tcp   0      0      127.0.0.1:25    0.0.0.0:*        LISTEN   1453/master         
+   tcp   0      0      0.0.0.0:80      0.0.0.0:*        LISTEN   55617/nginx: master 
+   tcp   0      0      0.0.0.0:3000    0.0.0.0:*        LISTEN   2339400/python3     
+   tcp   0      0      127.0.0.1:35471 0.0.0.0:*        LISTEN   57448/containerd    
+   tcp   0      0      0.0.0.0:888     0.0.0.0:*        LISTEN   55617/nginx: master 
+   tcp6  0      0      :::5566         :::*             LISTEN   25973/sshd: /usr/sb 
+   tcp6  0      0      :::8080         :::*             LISTEN   962272/docker-proxy 
+   tcp6  0      0      :::33060        :::*             LISTEN   76446/mysqld        
+   tcp6  0      0      :::80           :::*             LISTEN   55617/nginx: master 
+   tcp6  0      0      ::1:25          :::*             LISTEN   1453/master         
+   tcp6  0      0      :::6688         :::*             LISTEN   688797/python3      
+   
+   (3.12.12) [root@VM-0-7-opencloudos ~]# ss -tlnp
+   State    Recv-Q  Send-Q Local Address:Port Peer Address:Port Process                                                                                                                     
+   LISTEN   0       128          0.0.0.0:5566      0.0.0.0:*     users:(("sshd",pid=25973,fd=3))                                                                                            
+   LISTEN   0       500          0.0.0.0:3309      0.0.0.0:*     users:(("mysqld",pid=76446,fd=21))                                                                                         
+   LISTEN   0       4096         0.0.0.0:8080      0.0.0.0:*     users:(("docker-proxy",pid=962266,fd=7))                                                                                   
+   LISTEN   0       100        127.0.0.1:25        0.0.0.0:*     users:(("master",pid=1453,fd=13))                                                                                          
+   LISTEN   0       511          0.0.0.0:80        0.0.0.0:*     users:(("nginx",pid=348644,fd=9),("nginx",pid=348643,fd=9),("nginx",pid=55617,fd=9))                                       
+   LISTEN   0       128          0.0.0.0:3000      0.0.0.0:*     users:(("python3",pid=2339420,fd=6),("python3",pid=2339420,fd=5),("python3",pid=2339400,fd=5))                             
+   LISTEN   0       4096       127.0.0.1:35471     0.0.0.0:*     users:(("containerd",pid=57448,fd=8))                                                                                      
+   LISTEN   0       511          0.0.0.0:888       0.0.0.0:*     users:(("nginx",pid=348644,fd=8),("nginx",pid=348643,fd=8),("nginx",pid=55617,fd=8))                                       
+   LISTEN   0       128             [::]:5566         [::]:*     users:(("sshd",pid=25973,fd=4))                                                                                            
+   LISTEN   0       4096            [::]:8080         [::]:*     users:(("docker-proxy",pid=962272,fd=7))                                                                                   
+   LISTEN   0       70                 *:33060           *:*     users:(("mysqld",pid=76446,fd=18))                                                                                         
+   LISTEN   0       511             [::]:80           [::]:*     users:(("nginx",pid=348644,fd=22),("nginx",pid=348643,fd=22),("nginx",pid=55617,fd=22)) 
+   ```
+
+   
+
+3. **外网测试**：
    回到你自己的电脑（本地电脑）的命令终端，再次执行：
 
    ```

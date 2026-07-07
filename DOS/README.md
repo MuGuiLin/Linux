@@ -1,6 +1,11 @@
 # DOS（Disk Operating System）
 
+### 打开指定的文件夹(目录)浏览窗口
 
+- 
+- explorer 命令
+  - 格式：explorer "要打开的文件夹(目录)路径"
+  - 例如，打开D盘下的nvm目录：`explorer "D:\Program Files (x86)\nvm"` **注意：explorer 命令后面的路径要用双引号括起来。**
 
 ## [磁盘操作系统](https://baike.baidu.com/item/磁盘操作系统/3793138?fromModule=lemma_inlink)（Disk Operating System），是早期[个人计算机](https://baike.baidu.com/item/个人计算机/3731770?fromModule=lemma_inlink)上的一类[操作系统](https://baike.baidu.com/item/操作系统/192?fromModule=lemma_inlink)。
 

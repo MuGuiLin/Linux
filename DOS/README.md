@@ -1,13 +1,15 @@
 # DOS（Disk Operating System）
 
-### 打开指定的文件夹(目录)浏览窗口
+### 打开指定的文件夹(目录)浏览窗口(文件资源管理器)
 
 - 
 - explorer 命令
   - 格式：explorer "要打开的文件夹(目录)路径"
   - 例如，打开D盘下的nvm目录：`explorer "D:\Program Files (x86)\nvm"` **注意：explorer 命令后面的路径要用双引号括起来。**
 
-## [磁盘操作系统](https://baike.baidu.com/item/磁盘操作系统/3793138?fromModule=lemma_inlink)（Disk Operating System），是早期[个人计算机](https://baike.baidu.com/item/个人计算机/3731770?fromModule=lemma_inlink)上的一类[操作系统](https://baike.baidu.com/item/操作系统/192?fromModule=lemma_inlink)。
+
+
+## [DOS 磁盘操作系统](https://baike.baidu.com/item/磁盘操作系统/3793138?fromModule=lemma_inlink)（Disk Operating System），是早期[个人计算机](https://baike.baidu.com/item/个人计算机/3731770?fromModule=lemma_inlink)上的一类[操作系统](https://baike.baidu.com/item/操作系统/192?fromModule=lemma_inlink)。
 
 > 从1981年MS-DOS1.0直到1995年MS-DOS 6.22的15年间，DOS作为微软公司在个人计算机上使用的一个操作系统载体，推出了多个版本。DOS在IBM PC 兼容机市场中占有举足轻重的地位。可以直接操纵管理硬盘的文件，以DOS的形式运行。
 

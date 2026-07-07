@@ -2,10 +2,14 @@
 
 ### 打开指定的文件夹(目录)浏览窗口(文件资源管理器)
 
-- 
+- start 命令
+  - 格式：start "要打开的文件夹(目录)路径"
+  - 例如，打开D盘下的nvm目录：`start D:\Program Files (x86)\nvm` **注意：start 命令后面的路径要用''单引号 或 ""双引号括起来。**
+  - 注意：. 表示当前路径，例如是的D:\GitHub文件夹(目录)路径中打开的命令窗口就用 `start .` 就会打开 D:\GitHub
+  - 注意：.. 表示父级路径，例如是的D:\GitHub文件夹(目录)路径中打开的命令窗口就用 `start ..` 就会打开 D盘
 - explorer 命令
   - 格式：explorer "要打开的文件夹(目录)路径"
-  - 例如，打开D盘下的nvm目录：`explorer "D:\Program Files (x86)\nvm"` **注意：explorer 命令后面的路径要用双引号括起来。**
+  - 例如，打开D盘下的nvm目录：`explorer "D:\Program Files (x86)\nvm"` **注意：explorer 命令后面的路径要用''单引号 或 ""双引号括起来。**
 
 
 
